@@ -1,587 +1,679 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hamza & Hikma | Invitation</title>
+  <title>Hamza & Hikma | Invitation</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-html{
-  scroll-behavior:smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-  background:#050505;
-  color:white;
-  font-family:Georgia,"Times New Roman",serif;
-  overflow-x:hidden;
-}
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #050505;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-:root{
-  --gold:#d4af37;
-  --light-gold:#f5d76e;
-}
+    :root {
+      --gold: #d4af37;
+      --light-gold: #f5d76e;
+    }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  overflow:hidden;
-}
+    /* =========================
+       HERO + VIDEO
+    ========================= */
 
-.hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
-}
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
 
-/* DARK VIDEO OVERLAY */
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  z-index:1;
-}
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  padding:20px;
-  animation:fadeIn 2s ease;
-}
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.58);
+      z-index: 1;
+    }
 
-.small-title{
-  color:var(--light-gold);
-  font-size:14px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  margin-bottom:25px;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 25px;
+      animation: fadeIn 2s ease;
+    }
 
-.hero h1{
-  font-size:clamp(50px,13vw,95px);
-  font-weight:normal;
-  line-height:1;
-  text-shadow:0 0 30px rgba(212,175,55,.4);
-}
+    .small-title {
+      color: var(--light-gold);
+      font-size: 14px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
 
-.amp{
-  color:var(--gold);
-  font-style:italic;
-  font-size:.65em;
-}
+    .hero h1 {
+      font-size: clamp(48px, 13vw, 95px);
+      font-weight: normal;
+      line-height: 1;
+      text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
 
-.gold-line{
-  width:100px;
-  height:2px;
-  background:var(--gold);
-  margin:25px auto;
-}
+    .amp {
+      color: var(--gold);
+      font-style: italic;
+      font-size: 0.65em;
+    }
 
-.date-top{
-  font-size:18px;
-  letter-spacing:4px;
-  color:#eee;
-}
+    .gold-line {
+      width: 100px;
+      height: 2px;
+      background: var(--gold);
+      margin: 25px auto;
+    }
 
-.scroll{
-  margin-top:45px;
-  color:var(--gold);
-  font-size:12px;
-  letter-spacing:3px;
-  animation:bounce 2s infinite;
-}
+    .date-top {
+      color: #eee;
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
 
-/* SECTIONS */
-section{
-  padding:80px 20px;
-  text-align:center;
-}
+    .scroll {
+      margin-top: 45px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      animation: bounce 2s infinite;
+    }
 
-.section-title{
-  color:var(--gold);
-  font-size:36px;
-  font-weight:normal;
-  margin-bottom:15px;
-}
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
-.section-subtitle{
-  color:#999;
-  margin-bottom:40px;
-}
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-/* INVITATION */
-.invitation{
-  background:radial-gradient(circle at top,#1b1b1b,#050505 70%);
-}
+    .section-title {
+      color: var(--gold);
+      font-size: 36px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
 
-.invitation-card{
-  max-width:650px;
-  margin:auto;
-  padding:45px 25px;
-  border:1px solid rgba(212,175,55,.5);
-  border-radius:10px;
-  box-shadow:0 0 40px rgba(212,175,55,.08);
-}
+    .section-subtitle {
+      color: #999;
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
 
-.invitation-card p{
-  color:#ddd;
-  line-height:1.9;
-  font-size:17px;
-}
+    /* =========================
+       INVITATION
+    ========================= */
 
-/* DETAILS */
-.details{
-  background:#080808;
-}
+    .invitation {
+      background:
+        radial-gradient(
+          circle at top,
+          #1b1b1b,
+          #050505 70%
+        );
+    }
 
-.details-container{
-  max-width:900px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
+    .invitation-card {
+      max-width: 650px;
+      margin: auto;
+      padding: 45px 25px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.08);
+    }
 
-.detail-box{
-  padding:35px 15px;
-  background:#101010;
-  border:1px solid #292929;
-  border-radius:10px;
-  transition:.3s;
-}
+    .invitation-card p {
+      color: #ddd;
+      font-size: 17px;
+      line-height: 1.9;
+    }
 
-.detail-box:hover{
-  transform:translateY(-6px);
-  border-color:var(--gold);
-}
+    /* =========================
+       EVENT DETAILS
+    ========================= */
 
-.icon{
-  font-size:32px;
-  margin-bottom:15px;
-}
+    .details {
+      background: #080808;
+    }
 
-.detail-box h3{
-  color:var(--gold);
-  margin-bottom:10px;
-  font-weight:normal;
-}
+    .details-container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
 
-.detail-box p{
-  color:#ddd;
-  line-height:1.6;
-}
+    .detail-box {
+      padding: 35px 15px;
+      background: #101010;
+      border: 1px solid #292929;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
 
-/* COUNTDOWN */
-.countdown-section{
-  background:linear-gradient(180deg,#080808,#000);
-}
+    .detail-box:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+    }
 
-.countdown{
-  max-width:700px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
+    .icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
 
-.time-box{
-  background:#0c0c0c;
-  border:1px solid rgba(212,175,55,.5);
-  padding:25px 10px;
-  border-radius:8px;
-}
+    .detail-box h3 {
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
 
-.time-box span{
-  display:block;
-  color:var(--gold);
-  font-size:35px;
-  font-weight:bold;
-}
+    .detail-box p {
+      color: #ddd;
+      line-height: 1.6;
+    }
 
-.time-box small{
-  color:#aaa;
-  letter-spacing:2px;
-}
+    /* =========================
+       COUNTDOWN
+    ========================= */
 
-/* RSVP */
-.rsvp{
-  background:radial-gradient(circle,#171717,#050505 70%);
-}
+    .countdown-section {
+      background:
+        linear-gradient(
+          180deg,
+          #080808,
+          #000
+        );
+    }
 
-.rsvp-btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:15px 35px;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  text-decoration:none;
-  border-radius:30px;
-  letter-spacing:2px;
-  transition:.3s;
-}
+    .countdown {
+      max-width: 700px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
 
-.rsvp-btn:hover{
-  background:var(--gold);
-  color:#000;
-}
+    .time-box {
+      background: #0c0c0c;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      padding: 25px 10px;
+      border-radius: 8px;
+    }
 
-/* FOOTER */
-footer{
-  padding:35px 20px;
-  text-align:center;
-  border-top:1px solid #222;
-  color:#777;
-  font-size:13px;
-}
+    .time-box span {
+      display: block;
+      color: var(--gold);
+      font-size: 35px;
+      font-weight: bold;
+    }
 
-footer strong{
-  color:var(--gold);
-  font-weight:normal;
-}
+    .time-box small {
+      color: #aaa;
+      letter-spacing: 2px;
+    }
 
-/* ANIMATIONS */
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    /* =========================
+       RSVP
+    ========================= */
 
-@keyframes bounce{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(8px);
-  }
-}
+    .rsvp {
+      background:
+        radial-gradient(
+          circle,
+          #171717,
+          #050505 70%
+        );
+    }
 
-/* MOBILE */
-@media(max-width:700px){
+    .rsvp-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 15px 35px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      border-radius: 30px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
 
-  .details-container{
-    grid-template-columns:1fr;
-    max-width:400px;
-  }
+    .rsvp-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
 
-  .countdown{
-    grid-template-columns:repeat(2,1fr);
-    max-width:400px;
-  }
+    /* =========================
+       FOOTER
+    ========================= */
 
-  .time-box span{
-    font-size:28px;
-  }
+    footer {
+      padding: 35px 20px;
+      text-align: center;
+      border-top: 1px solid #222;
+      color: #777;
+      font-size: 13px;
+    }
 
-  section{
-    padding:65px 18px;
-  }
-}
-</style>
+    footer strong {
+      color: var(--gold);
+      font-weight: normal;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(8px);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .details-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+      }
+
+      .time-box span {
+        font-size: 28px;
+      }
+
+      section {
+        padding: 65px 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ======================================
-     VIDEO INVITATION
-     VIDEO FILE: invitation.mp4
-     ====================================== -->
+  <!-- =====================================
+       VIDEO INVITATION
+       File name: invitation.mp4
+  ====================================== -->
 
-<header class="hero">
+  <header class="hero">
 
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto">
 
-    <source
-      src="invitation.mp4"
-      type="video/mp4">
+      <source
+        src="invitation.mp4"
+        type="video/mp4">
 
-  </video>
+      Your browser does not support video.
 
-  <div class="overlay"></div>
+    </video>
 
-  <div class="hero-content">
+    <div class="overlay"></div>
 
-    <div class="small-title">
-      You Are Invited
+    <div class="hero-content">
+
+      <div class="small-title">
+        You Are Invited
+      </div>
+
+      <h1>
+        Hamza
+        <span class="amp">&</span>
+        Hikma
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <div class="date-top">
+        20 MAY 2019
+      </div>
+
+      <div class="scroll">
+        ↓ SCROLL TO EXPLORE ↓
+      </div>
+
     </div>
 
-    <h1>
-      Hamza
-      <span class="amp">&</span>
-      Hikma
-    </h1>
+  </header>
 
-    <div class="gold-line"></div>
 
-    <div class="date-top">
-      20 MAY 2019
+  <!-- =====================================
+       INVITATION MESSAGE
+  ====================================== -->
+
+  <section class="invitation">
+
+    <div class="invitation-card">
+
+      <h2 class="section-title">
+        With Great Pleasure
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p>
+        We warmly invite you to join us
+        on this special occasion and
+        celebrate a beautiful moment
+        together.
+      </p>
+
+      <br>
+
+      <p>
+        Your presence will make this
+        celebration even more memorable.
+      </p>
+
     </div>
 
-    <div class="scroll">
-      ↓ SCROLL TO EXPLORE ↓
-    </div>
-
-  </div>
-
-</header>
+  </section>
 
 
-<!-- INVITATION MESSAGE -->
+  <!-- =====================================
+       EVENT DETAILS
+  ====================================== -->
 
-<section class="invitation">
-
-  <div class="invitation-card">
+  <section class="details">
 
     <h2 class="section-title">
-      With Great Pleasure
+      Event Details
     </h2>
 
-    <div class="gold-line"></div>
-
-    <p>
-      We warmly invite you to join us
-      on this special occasion and
-      celebrate a beautiful moment
-      together.
+    <p class="section-subtitle">
+      We look forward to celebrating
+      with you.
     </p>
 
-    <br>
+    <div class="details-container">
 
-    <p>
-      Your presence will make this
-      celebration even more memorable.
+      <div class="detail-box">
+
+        <div class="icon">
+          📅
+        </div>
+
+        <h3>
+          Date
+        </h3>
+
+        <p>
+          20 May 2019
+        </p>
+
+      </div>
+
+
+      <div class="detail-box">
+
+        <div class="icon">
+          🕛
+        </div>
+
+        <h3>
+          Time
+        </h3>
+
+        <p>
+          12:00 PM
+        </p>
+
+      </div>
+
+
+      <div class="detail-box">
+
+        <div class="icon">
+          📍
+        </div>
+
+        <h3>
+          Venue
+        </h3>
+
+        <p>
+          New Level Hotel
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       COUNTDOWN
+  ====================================== -->
+
+  <section class="countdown-section">
+
+    <h2 class="section-title">
+      Countdown
+    </h2>
+
+    <p class="section-subtitle">
+      Until our special day
     </p>
 
-  </div>
+    <div class="countdown">
 
-</section>
+      <div class="time-box">
+        <span id="days">00</span>
+        <small>DAYS</small>
+      </div>
 
+      <div class="time-box">
+        <span id="hours">00</span>
+        <small>HOURS</small>
+      </div>
 
-<!-- EVENT DETAILS -->
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <small>MINUTES</small>
+      </div>
 
-<section class="details">
-
-  <h2 class="section-title">
-    Event Details
-  </h2>
-
-  <p class="section-subtitle">
-    We look forward to celebrating with you.
-  </p>
-
-  <div class="details-container">
-
-    <div class="detail-box">
-
-      <div class="icon">📅</div>
-
-      <h3>Date</h3>
-
-      <p>
-        20 May 2019
-      </p>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <small>SECONDS</small>
+      </div>
 
     </div>
 
-
-    <div class="detail-box">
-
-      <div class="icon">🕛</div>
-
-      <h3>Time</h3>
-
-      <p>
-        12:00 PM
-      </p>
-
-    </div>
+  </section>
 
 
-    <div class="detail-box">
+  <!-- =====================================
+       RSVP
+  ====================================== -->
 
-      <div class="icon">📍</div>
+  <section class="rsvp">
 
-      <h3>Venue</h3>
+    <h2 class="section-title">
+      We'd Love To See You
+    </h2>
 
-      <p>
-        New Level Hotel
-      </p>
+    <p class="section-subtitle">
+      Please confirm your attendance.
+    </p>
 
-    </div>
+    <a
+      class="rsvp-btn"
+      href="tel:0946001607">
 
-  </div>
+      RSVP NOW
 
-</section>
+    </a>
 
-
-<!-- COUNTDOWN -->
-
-<section class="countdown-section">
-
-  <h2 class="section-title">
-    Countdown
-  </h2>
-
-  <p class="section-subtitle">
-    Until our special day
-  </p>
-
-  <div class="countdown">
-
-    <div class="time-box">
-      <span id="days">00</span>
-      <small>DAYS</small>
-    </div>
-
-    <div class="time-box">
-      <span id="hours">00</span>
-      <small>HOURS</small>
-    </div>
-
-    <div class="time-box">
-      <span id="minutes">00</span>
-      <small>MINUTES</small>
-    </div>
-
-    <div class="time-box">
-      <span id="seconds">00</span>
-      <small>SECONDS</small>
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<!-- RSVP -->
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
 
-<section class="rsvp">
+  <footer>
 
-  <h2 class="section-title">
-    We'd Love To See You
-  </h2>
+    <p>
+      Made with ♥ for
+      <strong>
+        Hamza & Hikma
+      </strong>
+    </p>
 
-  <p class="section-subtitle">
-    Please confirm your attendance.
-  </p>
-
-  <a
-    class="rsvp-btn"
-    href="tel:0946001607">
-
-    RSVP NOW
-
-  </a>
-
-</section>
+  </footer>
 
 
-<!-- FOOTER -->
+  <!-- =====================================
+       COUNTDOWN JAVASCRIPT
+  ====================================== -->
 
-<footer>
+  <script>
 
-  <p>
-    Made with ♥ for
-    <strong>Hamza & Hikma</strong>
-  </p>
-
-</footer>
+    const eventDate =
+      new Date(
+        "May 20, 2019 12:00:00"
+      ).getTime();
 
 
-<!-- COUNTDOWN SCRIPT -->
+    const countdown =
+      setInterval(function () {
 
-<script>
+        const now =
+          new Date().getTime();
 
-const eventDate =
-  new Date("May 20, 2019 12:00:00").getTime();
+        const distance =
+          eventDate - now;
 
-const countdown =
-  setInterval(function(){
 
-    const now =
-      new Date().getTime();
+        const days =
+          Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+          );
 
-    const distance =
-      eventDate - now;
 
-    const days =
-      Math.floor(
-        distance /
-        (1000 * 60 * 60 * 24)
-      );
+        const hours =
+          Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+          );
 
-    const hours =
-      Math.floor(
-        (distance %
-        (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-      );
 
-    const minutes =
-      Math.floor(
-        (distance %
-        (1000 * 60 * 60)) /
-        (1000 * 60)
-      );
+        const minutes =
+          Math.floor(
+            (distance %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
+          );
 
-    const seconds =
-      Math.floor(
-        (distance %
-        (1000 * 60)) /
-        1000
-      );
 
-    document.getElementById("days")
-      .innerText =
-      String(Math.max(days,0))
-      .padStart(2,"0");
+        const seconds =
+          Math.floor(
+            (distance %
+            (1000 * 60)) /
+            1000
+          );
 
-    document.getElementById("hours")
-      .innerText =
-      String(Math.max(hours,0))
-      .padStart(2,"0");
 
-    document.getElementById("minutes")
-      .innerText =
-      String(Math.max(minutes,0))
-      .padStart(2,"0");
+        document.getElementById("days")
+          .innerText =
+          String(Math.max(days, 0))
+          .padStart(2, "0");
 
-    document.getElementById("seconds")
-      .innerText =
-      String(Math.max(seconds,0))
-      .padStart(2,"0");
 
-    if(distance < 0){
-      clearInterval(countdown);
-    }
+        document.getElementById("hours")
+          .innerText =
+          String(Math.max(hours, 0))
+          .padStart(2, "0");
 
-  },1000);
 
-</script>
+        document.getElementById("minutes")
+          .innerText =
+          String(Math.max(minutes, 0))
+          .padStart(2, "0");
+
+
+        document.getElementById("seconds")
+          .innerText =
+          String(Math.max(seconds, 0))
+          .padStart(2, "0");
+
+
+        if (distance < 0) {
+          clearInterval(countdown);
+        }
+
+      }, 1000);
+
+  </script>
 
 </body>
 </html>
